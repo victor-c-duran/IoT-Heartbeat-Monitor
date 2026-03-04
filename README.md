@@ -1,6 +1,6 @@
 # IoT Heartbeat Monitor – Scenario 2 (MQTT)
 
-Este repositório contém o projeto "IoT Heartbeat Monitor – Scenario 2 (MQTT)", desenvolvido como parte da disciplina Objetos Inteligentes Conectados.
+Este repositório contém o projeto "IoT Heartbeat Monitor – Scenario 2 (MQTT)", desenvolvido como parte da disciplina 'Prat Prof em AnaliseDesen Sistemas'.
 
 O sistema monitora um sinal de ECG simulado, identifica anomalias e envia alertas via MQTT, permitindo também controle remoto de atuadores (LED e buzzer).
 
@@ -101,7 +101,7 @@ Descrição dos tópicos utilizados, payloads, comandos aceitos e fluxo MQTT:
 - Alecsei Ivanov da Costa  
 - Victor Céspedes Duran  
 
-Projeto desenvolvido para a disciplina Objetos Inteligentes Conectados – Universidade Presbiteriana Mackenzie.
+Projeto desenvolvido para a disciplina 'Prat Prof em AnaliseDesen Sistemas' – Universidade Presbiteriana Mackenzie.
 
 ---
 
