@@ -1,68 +1,56 @@
 # Hardware utilizado
 
-Este documento descreve os componentes e conexões de hardware empregados no projeto **IoT Heartbeat Monitor – Scenario 2 (MQTT)**.
+Este documento descreve os componentes empregados no projeto **IoT Heartbeat Monitor** e apresenta as conexões adotadas na simulação.
 
----
+## 1. Microcontrolador
 
-## 1. Microcontrolador ESP32
+O projeto utiliza um **ESP32 DevKit V1**, responsável por:
 
-- Placa: ESP32 DevKit V1.
-- Periféricos utilizados:
-  - ADC para leitura do sinal analógico.
-  - GPIOs para LED e buzzer.
-  - Wi-Fi integrado (TCP/IP).
+- realizar a leitura analógica do sinal simulado;
+- controlar os atuadores de saída;
+- conectar-se à rede Wi-Fi;
+- comunicar-se com o broker MQTT.
 
-### Pinos usados:
+### Pinos utilizados
 
-- `ECG_PIN` → **GPIO 34** (entrada analógica)
-- `LED_PIN` → **GPIO 25** (saída digital)
-- `BUZZER_PIN` → **GPIO 26** (saída digital)
+- `ECG_PIN` → **GPIO 34**
+- `LED_PIN` → **GPIO 25**
+- `BUZZER_PIN` → **GPIO 26**
 
----
+## 2. Sinal cardíaco simulado
 
-## 2. Sensor de ECG (simulado)
+Na simulação do Wokwi, o sinal cardíaco é representado por um **potenciômetro**. Esse componente permite variar manualmente o valor lido pelo conversor analógico-digital do ESP32.
 
-No Wokwi, o ECG é simulado por um **potenciômetro**.
+### Ligações do potenciômetro
 
-### Ligações:
-- Lado 1 → 3.3V  
-- Lado 2 (meio) → GPIO 34  
-- Lado 3 → GND  
+- terminal lateral → `3.3V`
+- terminal central → `GPIO 34`
+- terminal lateral oposto → `GND`
 
-Em protótipo real, poderia ser substituído por módulo AD8232 (com isolamento adequado).
+## 3. LED de alerta
 
----
+O **LED** representa o alerta visual do sistema. Ele é acionado automaticamente quando o valor do sinal sai da faixa segura, salvo quando houver override manual via MQTT.
 
-## 3. LED de Indicação
+### Ligação do LED
 
-- LED vermelho 5mm.
-- Função: sinalizar anomalia (modo automático) ou override (modo manual).
-
-### Ligações:
-- Anodo → resistor 220Ω → GPIO 25  
-- Catodo → GND  
-
----
+- ânodo → resistor de `220Ω` → `GPIO 25`
+- cátodo → `GND`
 
 ## 4. Buzzer
 
-- Buzzer ativo 5V.
+O **buzzer ativo** é utilizado como alerta sonoro. Seu acionamento automático ocorre quando a anomalia persiste por aproximadamente dois segundos, exceto em situações de override manual.
 
-### Ligações:
-- Pino positivo → GPIO 26  
-- Pino negativo → GND  
+### Ligação do buzzer
 
----
+- terminal positivo → `GPIO 26`
+- terminal negativo → `GND`
 
 ## 5. Alimentação
 
-- ESP32 alimentado via **USB** (5V).
-- Componentes alimentados pelos pinos **3.3V/5V** do ESP32.
+Na simulação, a alimentação do circuito é realizada virtualmente. Em contexto físico, o ESP32 pode ser alimentado por USB, enquanto os demais componentes recebem energia a partir dos pinos da placa, conforme a necessidade do circuito.
 
----
+## 6. Observações
 
-## 6. Observações Importantes
-
-- Em aplicações reais com ECG, é obrigatório isolamento elétrico.
-- No Wokwi, todas as ligações são virtuais, sem risco.
-- Os valores do ADC representam o "batimento" simulado.
+- o ambiente Wokwi reproduz o comportamento lógico do circuito, mas não substitui cuidados de segurança elétrica exigidos em aplicações reais;
+- em um cenário real de monitoramento cardíaco, o uso de sensores biomédicos exigiria proteção, isolamento e validação adicionais;
+- no projeto acadêmico, o potenciômetro cumpre a função de gerar valores variáveis para testes e demonstração do comportamento do sistema.
