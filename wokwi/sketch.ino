@@ -113,7 +113,7 @@ void mqtt_callback(char* topic, byte* payload, unsigned int length) {
 void reconnect() {
   while (!client.connected()) {
     Serial.print("Connecting to MQTT...");
-    if (client.connect("ESP32Client_Alecsei")) {
+    if (client.connect("ESP32_Heartbeat_Monitor")) {
       Serial.println("connected!");
       client.subscribe("iot/monitor/cmd");
       Serial.println("Subscribed to iot/monitor/cmd");
