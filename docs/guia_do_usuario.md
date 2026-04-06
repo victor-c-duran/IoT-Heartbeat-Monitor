@@ -46,11 +46,10 @@ No repositório do projeto, os principais arquivos encontram-se organizados da s
 ├─ docs/
 │  ├─ arquitetura.md
 │  ├─ comunicacao_mqtt.md
-│  ├─ guia_do_usuario.md
 │  └─ hardware.md
 └─ wokwi/
-   ├─ diagram.md
-   ├─ guia_de_simulacao.json
+   ├─ README.md
+   ├─ diagram.json
    ├─ libraries.txt
    └─ sketch.ino
 ```
