@@ -1,110 +1,88 @@
-# IoT Heartbeat Monitor – Scenario 2 (MQTT)
+# IoT Heartbeat Monitor
 
-Este repositório contém o projeto "IoT Heartbeat Monitor – Scenario 2 (MQTT)", desenvolvido como parte da disciplina 'Prática Profissional em Análise e Desenvolvimento de Sistemas'.
+Este repositório contém o projeto **IoT Heartbeat Monitor**, desenvolvido na disciplina **Prática Profissional em Análise e Desenvolvimento de Sistemas**. O sistema simula o monitoramento de sinais cardíacos por meio de um circuito com ESP32 no Wokwi, identifica anomalias e envia dados e alertas via MQTT, além de permitir o controle remoto dos atuadores.
 
-O sistema monitora um sinal de ECG simulado, identifica anomalias e envia alertas via MQTT, permitindo também controle remoto de atuadores (LED e buzzer).
+## Visão geral
 
----
+O protótipo realiza as seguintes funções:
 
-## 🎯 Objetivo do Projeto
+- leitura contínua de um sinal cardíaco simulado por potenciômetro;
+- identificação de valores fora da faixa segura;
+- acionamento automático de LED e buzzer em situações anormais;
+- publicação de leituras e alertas em tópicos MQTT;
+- recebimento de comandos remotos para controle manual dos atuadores;
+- restauração do funcionamento automático por meio do comando `RESET`.
 
-Criar um protótipo IoT capaz de:
+## Estrutura do repositório
 
-- Ler continuamente um sinal cardíaco (simulado com potenciômetro no Wokwi).
-- Detectar anomalias com base em limites pré-definidos.
-- Gerar alertas locais (LED e buzzer).
-- Publicar dados e alertas via MQTT.
-- Receber comandos remotos (LED_ON, BUZZER_OFF, RESET, etc.).
-- Demonstrar uma arquitetura IoT completa: sensor → ESP32 → Wi-Fi → MQTT → cliente remoto.
-
----
-
-## 📂 Estrutura do Repositório
-
-```
+```text
 .
-├─ README.md
-├─ wokwi/
-│  ├─ diagram.json
-│  ├─ libraries.txt
-|  ├─ sketch.ino
-│  └─ README.md
-└─ docs/
-   ├─ arquitetura.md
-   ├─ hardware.md
-   └─ comunicacao_mqtt.md
+├── README.md
+├── docs/
+│   ├── arquitetura.md
+│   ├── comunicacao_mqtt.md
+│   ├── guia_do_usuario.md
+│   ├── hardware.md
+│   ├── instalacao_execucao.md
+│   └── testes.md
+└── wokwi/
+    ├── README.md
+    ├── diagram.json
+    ├── libraries.txt
+    └── sketch.ino
 ```
 
----
+## Documentação disponível
 
-## 🌐 Comunicação via Internet / MQTT
+- [Guia do usuário](docs/guia_do_usuario.md)
+- [Instalação e execução](docs/instalacao_execucao.md)
+- [Arquitetura do sistema](docs/arquitetura.md)
+- [Hardware utilizado](docs/hardware.md)
+- [Comunicação MQTT](docs/comunicacao_mqtt.md)
+- [Casos de teste](docs/testes.md)
+- [Guia rápido da simulação no Wokwi](wokwi/README.md)
 
-O projeto utiliza:
+## Execução da simulação
 
-- Wi-Fi para comunicação TCP/IP.
-- Broker MQTT público: test.mosquitto.org
-- Tópicos:
-  - Publicação dos valores de ECG: iot/monitor/ecg
-  - Publicação de alertas: iot/monitor/alert
-  - Recebimento de comandos: iot/monitor/cmd
+O projeto foi estruturado para execução no **Wokwi**. Os arquivos da simulação encontram-se na pasta `wokwi/`.
 
-Documentação completa da comunicação está em:
-- docs/comunicacao_mqtt.md
+Resumo do processo:
 
----
+1. acessar o Wokwi;
+2. criar um projeto ESP32 Arduino;
+3. importar `diagram.json` e `libraries.txt`;
+4. copiar o conteúdo de `wokwi/sketch.ino` para o editor do simulador;
+5. iniciar a simulação e acompanhar o monitor serial;
+6. utilizar um cliente MQTT externo, como o MQTTX, para observar os tópicos e enviar comandos.
 
-## 🖥️ Rodando no Wokwi (Simulação)
+O passo a passo completo está em [docs/instalacao_execucao.md](docs/instalacao_execucao.md).
 
-Resumo:
+## Comunicação MQTT
 
-1. Acesse o Wokwi (https://wokwi.com).
-2. Importe os arquivos da pasta "wokwi" (diagram.json e libraries.txt).
-3. Cole o código de wokwi/sketch.ino no editor do Wokwi.
-4. Clique em "Play" para iniciar a simulação.
-5. Opcional: use um cliente MQTT externo (por exemplo, MQTTX) para assinar e enviar comandos.
+O sistema utiliza o broker público `test.mosquitto.org` e os seguintes tópicos:
 
-Guia passo a passo detalhado:
-- wokwi/README.md
+- `iot/monitor/ecg` para publicação das leituras do sinal;
+- `iot/monitor/alert` para publicação dos alertas;
+- `iot/monitor/cmd` para recebimento de comandos remotos.
 
----
+Os detalhes de payloads, fluxo de mensagens e comandos aceitos estão em [docs/comunicacao_mqtt.md](docs/comunicacao_mqtt.md).
 
-## 🔌 Hardware Utilizado
+## Hardware e simulação
 
-Principais componentes:
+O protótipo utiliza:
 
-- ESP32 DevKit V1.
-- Potenciômetro simulando o sinal de ECG (no Wokwi).
-- LED de indicação (GPIO 25).
-- Buzzer de alerta (GPIO 26).
+- **ESP32 DevKit V1**;
+- **potenciômetro** simulando o sinal de ECG no Wokwi;
+- **LED** para alerta visual;
+- **buzzer** para alerta sonoro.
 
-Detalhes de ligações, pinos e alimentação:
-- docs/hardware.md
+As ligações e observações de hardware estão em [docs/hardware.md](docs/hardware.md).
 
----
+## Autores
 
-## 🧱 Arquitetura do Sistema
+- Alecsei Ivanov da Costa
+- Víctor Céspedes Duran
 
-Descrição da arquitetura em camadas, fluxo de funcionamento e lógica principal do sistema:
-- docs/arquitetura.md
+## Licença
 
----
-
-## 📡 Tópicos MQTT e Protocolo
-
-Descrição dos tópicos utilizados, payloads, comandos aceitos e fluxo MQTT:
-- docs/comunicacao_mqtt.md
-
----
-
-## 👨‍💻 Autores
-
-- Alecsei Ivanov da Costa  
-- Victor Céspedes Duran  
-
-Projeto desenvolvido para a disciplina 'Prática Profissional em Análise e Desenvolvimento de Sistemas' – Universidade Presbiteriana Mackenzie.
-
----
-
-## 📘 Licença
-
-Uso acadêmico.
+Projeto disponibilizado para fins acadêmicos.
