@@ -44,6 +44,7 @@ O protótipo realiza as seguintes funções:
 - [Comunicação MQTT](docs/comunicacao_mqtt.md)
 - [Casos de teste](docs/testes.md)
 - [Guia rápido da simulação no Wokwi](wokwi/README.md)
+- [Imagens](docs/img/)
 
 ## Execução da simulação
 
