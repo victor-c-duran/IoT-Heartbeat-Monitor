@@ -46,7 +46,13 @@ No repositório do projeto, os principais arquivos encontram-se organizados da s
 ├─ docs/
 │  ├─ arquitetura.md
 │  ├─ comunicacao_mqtt.md
-│  └─ hardware.md
+│  ├─ guia_do_usuario.md
+│  ├─ hardware.md
+│  ├─ instalacao_execucao.md
+│  └─ testes.md
+|  └─ img/
+│     ├─ fluxograma.png
+|     └─ projeto_wokwi.png
 └─ wokwi/
    ├─ README.md
    ├─ diagram.json
