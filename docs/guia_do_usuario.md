@@ -305,15 +305,3 @@ Em aplicações médicas reais, seriam necessários recursos adicionais de segur
 ## 14. Considerações finais
 
 O guia do usuário apresentado tem por objetivo facilitar a compreensão e a reprodução do projeto **IoT Heartbeat Monitor**, descrevendo desde a estrutura do repositório até a execução da simulação e o uso da comunicação MQTT. A solução demonstra, de forma prática, a integração entre sensoriamento, processamento embarcado, envio de dados em rede e controle remoto, reforçando o potencial das aplicações de Internet das Coisas no contexto do monitoramento remoto em saúde.
-
----
-
-## 15. Link sugerido para disponibilização
-
-Recomenda-se que este guia seja salvo no repositório GitHub com um nome como:
-
-```text
-docs/guia_do_usuario.md
-```
-
-Após isso, o link a ser inserido no trabalho poderá apontar diretamente para esse arquivo no GitHub.
