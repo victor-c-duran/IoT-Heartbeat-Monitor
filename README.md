@@ -17,19 +17,22 @@ O protótipo realiza as seguintes funções:
 
 ```text
 .
-├── README.md
-├── docs/
-│   ├── arquitetura.md
-│   ├── comunicacao_mqtt.md
-│   ├── guia_do_usuario.md
-│   ├── hardware.md
-│   ├── instalacao_execucao.md
-│   └── testes.md
-└── wokwi/
-    ├── README.md
-    ├── diagram.json
-    ├── libraries.txt
-    └── sketch.ino
+├─ README.md
+├─ docs/
+|  └─ img/
+│     ├─ fluxograma.png
+|     └─ projeto_wokwi.png
+│  ├─ arquitetura.md
+│  ├─ comunicacao_mqtt.md
+│  ├─ guia_do_usuario.md
+│  ├─ hardware.md
+│  ├─ instalacao_execucao.md
+│  └─ testes.md
+└─ wokwi/
+   ├─ README.md
+   ├─ diagram.json
+   ├─ libraries.txt
+   └─ sketch.ino
 ```
 
 ## Documentação disponível
