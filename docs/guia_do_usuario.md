@@ -44,15 +44,15 @@ No repositório do projeto, os principais arquivos encontram-se organizados da s
 .
 ├─ README.md
 ├─ docs/
+|  └─ img/
+│     ├─ fluxograma.png
+|     └─ projeto_wokwi.png
 │  ├─ arquitetura.md
 │  ├─ comunicacao_mqtt.md
 │  ├─ guia_do_usuario.md
 │  ├─ hardware.md
 │  ├─ instalacao_execucao.md
 │  └─ testes.md
-|  └─ img/
-│     ├─ fluxograma.png
-|     └─ projeto_wokwi.png
 └─ wokwi/
    ├─ README.md
    ├─ diagram.json
