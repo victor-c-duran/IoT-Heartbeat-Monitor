@@ -90,3 +90,8 @@ As ligações e observações de hardware estão em [docs/hardware.md](docs/hard
 ## Licença
 
 Projeto disponibilizado para fins acadêmicos.
+
+
+## Iteração 2
+
+Nesta iteração foram realizadas pequenas alterações na documentação do projeto com o objetivo de demonstrar o uso de branches e merge no controle de versão.
