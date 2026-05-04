@@ -29,7 +29,7 @@ O protótipo realiza as seguintes funções:
 │  ├─ instalacao_execucao.md
 │  └─ testes.md
 └─ wokwi/
-   ├─ README.md
+   ├─ guia_simulacao.md
    ├─ diagram.json
    ├─ libraries.txt
    └─ sketch.ino
@@ -43,7 +43,7 @@ O protótipo realiza as seguintes funções:
 - [Hardware utilizado](docs/hardware.md)
 - [Comunicação MQTT](docs/comunicacao_mqtt.md)
 - [Casos de teste](docs/testes.md)
-- [Guia rápido da simulação no Wokwi](wokwi/README.md)
+- [Guia rápido da simulação no Wokwi](wokwi/guia_simulacao.md)
 - [Imagens](docs/img/)
 
 ## Execução da simulação
