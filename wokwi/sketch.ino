@@ -1,6 +1,7 @@
 // IoT Heartbeat Monitor - Scenario 1 (MQTT)
 // Author: Alecsei da Costa e Víctor Duran
 // PRAT PROF EM ANALISEDESEN SISTEMAS
+// Esse arquivo utiliza do Wokwi com o broker padrão (test.mosquitto.org)
 
 #include <WiFi.h>
 #include <PubSubClient.h>
