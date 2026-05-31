@@ -1,6 +1,6 @@
-// IoT Heartbeat Monitor - Scenario 2 (MQTT)
-// Author: Alecsei Ivanov da Costa e Víctor Céspedes Duran
-// PRATICA PROFISSIONAL EM ANÁLISE E DESENVOLVIMENTO DE SISTEMAS
+// IoT Heartbeat Monitor - Scenario 1 (MQTT)
+// Author: Alecsei da Costa e Víctor Duran
+// PRAT PROF EM ANALISEDESEN SISTEMAS
 
 #include <WiFi.h>
 #include <PubSubClient.h>
@@ -111,16 +111,28 @@ void mqtt_callback(char* topic, byte* payload, unsigned int length) {
 }
 
 void reconnect() {
+
   while (!client.connected()) {
+  
     Serial.print("Connecting to MQTT...");
-    if (client.connect("ESP32_Heartbeat_Monitor")) {
+	
+	
+	
+	
+    if (client.connect("ESP32Client_Alecsei")) {
+	
       Serial.println("connected!");
+	  
       client.subscribe("iot/monitor/cmd");
+	  
       Serial.println("Subscribed to iot/monitor/cmd");
+	  
     } else {
+	
       Serial.print("failed, rc=");
       Serial.print(client.state());
       Serial.println(" retrying in 5 seconds");
+	  
       delay(5000);
     }
   }
@@ -138,7 +150,9 @@ void publish_alert(const char* txt) {
 
 // --------------------- SETUP -----------------------
 void setup() {
+
   Serial.begin(115200);
+  
 
   pinMode(LED_PIN, OUTPUT);
   pinMode(BUZZER_PIN, OUTPUT);
@@ -147,6 +161,7 @@ void setup() {
   digitalWrite(BUZZER_PIN, LOW);
 
   setup_wifi();
+  
   client.setServer(mqtt_server, 1883);
   client.setCallback(mqtt_callback);
 
