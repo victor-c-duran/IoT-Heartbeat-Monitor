@@ -11,10 +11,10 @@ O projeto utiliza o broker público abaixo:
 - **Transporte:** TCP/IP
 - **Segurança:** sem TLS, em ambiente acadêmico e de simulação
 
-No código, a configuração do broker está definida da seguinte forma:
+No código, a configuração do broker está definida da seguinte forma, por exemplo:
 
 ```cpp
-const char* mqtt_server = "test.mosquitto.org" ou "broker.hivemq.com";
+const char* mqtt_server = "test.mosquitto.org";
 ```
 
 ## 2. Tópicos do projeto
