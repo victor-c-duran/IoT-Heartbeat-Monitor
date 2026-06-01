@@ -17,7 +17,7 @@ A camada de borda é representada pelo **ESP32**, responsável pela execução d
 
 ### 1.2 Camada de comunicação
 
-A comunicação é realizada por meio de **Wi-Fi**, utilizando **TCP/IP** e o protocolo **MQTT**. O broker adotado no projeto é o serviço público `test.mosquitto.org`.
+A comunicação é realizada por meio de **Wi-Fi**, utilizando **TCP/IP** e o protocolo **MQTT**. O broker adotado no projeto é o serviço público `test.mosquitto.org` ou privado `broker.hivemq.com`.
 
 Essa camada viabiliza:
 
