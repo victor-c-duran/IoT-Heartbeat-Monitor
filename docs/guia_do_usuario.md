@@ -73,6 +73,7 @@ O projeto utiliza os seguintes componentes:
 - **LED vermelho**: indica visualmente a ocorrência de anomalia;
 - **buzzer ativo**: emite alerta sonoro quando a anomalia persiste;
 - **broker MQTT público**: `test.mosquitto.org`;
+- **broker MQTT privado (opcional)**: `broker.hivemq.com`;
 - **cliente MQTT externo**: MQTTX ou similar.
 
 No código-fonte, os pinos utilizados são os seguintes:
