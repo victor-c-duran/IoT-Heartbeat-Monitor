@@ -6,7 +6,7 @@ Este documento apresenta a estrutura de comunicação MQTT utilizada no projeto 
 
 O projeto utiliza o broker público abaixo:
 
-- **Host:** `test.mosquitto.org`
+- **Host:** `test.mosquitto.org` ou `broker.hivemq.com`
 - **Porta:** `1883`
 - **Transporte:** TCP/IP
 - **Segurança:** sem TLS, em ambiente acadêmico e de simulação
@@ -14,7 +14,7 @@ O projeto utiliza o broker público abaixo:
 No código, a configuração do broker está definida da seguinte forma:
 
 ```cpp
-const char* mqtt_server = "test.mosquitto.org";
+const char* mqtt_server = "test.mosquitto.org" ou "broker.hivemq.com";
 ```
 
 ## 2. Tópicos do projeto
@@ -91,7 +91,7 @@ Para testar a comunicação, pode-se utilizar o **MQTTX** ou outro cliente compa
 
 ### Configuração da conexão
 
-- **Host:** `test.mosquitto.org`
+- **Host:** `test.mosquitto.org` ou `broker.hivemq.com`
 - **Porta:** `1883`
 - **Client ID:** livre, desde que não entre em conflito com outro cliente conectado
 
