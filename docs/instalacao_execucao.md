@@ -48,7 +48,7 @@ Depois de importar os arquivos e inserir o código-fonte:
 Espera-se visualizar no monitor serial:
 
 - tentativa de conexão ao Wi-Fi `Wokwi-GUEST`;
-- conexão ao broker MQTT `test.mosquitto.org`;
+- conexão ao broker MQTT `test.mosquitto.org` ou `broker.hivemq.com`;
 - assinatura do tópico `iot/monitor/cmd`;
 - impressão periódica dos valores analógicos lidos.
 
@@ -78,7 +78,7 @@ Quando o valor fica abaixo de `500` ou acima de `2000`:
 
 No MQTTX, criar uma conexão com os seguintes parâmetros:
 
-- **Host:** `test.mosquitto.org`
+- **Host:** `test.mosquitto.org` ou `broker.hivemq.com`
 - **Porta:** `1883`
 - **Protocolo:** MQTT sem TLS
 
